@@ -1,0 +1,36 @@
+<resources>
+    <string name="app_name">proyecto</string>
+    <string name="textoEliminar">Seleccione el servicio a eliminar</string>
+    <string name="netflix">Netflix</string>
+    <string name="disney">Disney</string>
+    <string name="spotify">Spotify</string>
+    <string name="CuentaItem">Cuenta</string>
+    <string name="LogoutItem">Logout</string>
+    <string name="mensajeSalida">Haz salido de la sesión</string>
+    <string name="mes">Mes</string>
+    <string name="año">Año</string>
+    <string name="enero">Enero</string>
+    <string name="fecha1">22 de Enero de 2022</string>
+    <string name="fecha2">23 de Enero de 2022</string>
+    <string name="monto1">13.99$</string>
+    <string name="monto2">7.99$</string>
+    <string name="monto3">5.99$</string>
+    <string name="montoMensual">27.97$</string>
+    <string name="totalMensual">Total mensual</string>
+    <string name="añoActual">2022</string>
+    <string name="monto1Anual">167.88$</string>
+    <string name="monto2Anual">95.88$</string>
+    <string name="monto3Anual">71.88$</string>
+    <string name="montoAnual">335.64$</string>
+    <string name="totalAnual">Total anual</string>
+    <string name="vistaGenereal">Vista general de tu cuenta</string>
+    <string name="usuarioTxt">Nombre de usuario</string>
+    <string name="usuario">Usuario123</string>
+    <string name="emailTxt">Correo electrónico</string>
+    <string name="email">usuario123@gmail.com</string>
+    <string name="nombreTxt">Nombre</string>
+    <string name="nombre">Cristian Borja</string>
+    <string name="tipoCuentaTxt">Tipo de cuenta</string>
+    <string name="tipoCuenta">Plan gratuito</string>
+    <string name="membresia">Obtener membresía</string>
+</resources>
