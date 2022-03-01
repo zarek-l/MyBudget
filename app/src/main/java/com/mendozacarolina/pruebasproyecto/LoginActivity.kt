@@ -36,23 +36,23 @@ class LoginActivity : AppCompatActivity() {
             val clave = editTextPassword.text.toString()
 
             //Validaciones de datos requeridos y formatos
-            if(!ValidarDatosRequeridos())
+            if(!validarDatosRequeridos())
                 return@setOnClickListener
-            AutenticarUsuario(email,clave)
+            autenticarUsuario(email,clave)
         }
 
         buttonRegistrar.setOnClickListener {
-            var intent = Intent(this,SignActivity::class.java)
+            val intent = Intent(this,SignActivity::class.java)
             startActivity(intent)
             finish()
         }
     }
 
-    fun AutenticarUsuario(email:String, password:String){
+    fun autenticarUsuario(email:String, password:String){
         auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    var intent1 = Intent(this,MainActivity::class.java)
+                    val intent1 = Intent(this,MainActivity::class.java)
                     intent1.putExtra(LOGIN_KEY,auth.currentUser!!.email)
                     startActivity(intent1)
                     finish()
@@ -63,7 +63,7 @@ class LoginActivity : AppCompatActivity() {
             }
     }
 
-    private fun ValidarDatosRequeridos():Boolean{
+    private fun validarDatosRequeridos():Boolean{
         val email = editTextEmail.text.toString()
         val clave = editTextPassword.text.toString()
         if (email.isEmpty()) {
