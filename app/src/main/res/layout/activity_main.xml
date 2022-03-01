@@ -34,7 +34,7 @@
         android:layout_height="44dp"
         android:layout_marginTop="30dp"
         android:ems="10"
-        android:hint="Usuario"
+        android:hint="Correo electrónico"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
