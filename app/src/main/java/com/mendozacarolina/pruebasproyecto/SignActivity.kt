@@ -46,6 +46,12 @@ class SignActivity : AppCompatActivity(){
                 return@setOnClickListener
             CrearNuevoUsuario(email,clave)
         }
+
+        textViewIniciar.setOnClickListener {
+            var intent = Intent(this,LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     fun CrearNuevoUsuario(email:String, password:String){
