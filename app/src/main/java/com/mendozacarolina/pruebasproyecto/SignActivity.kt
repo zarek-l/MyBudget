@@ -74,6 +74,8 @@ class SignActivity : AppCompatActivity(){
                     Log.d(EXTRA_LOGIN, "createUserWithEmail:success")
                     val intent = Intent(this,MainActivity::class.java)
                     intent.putExtra(LOGIN_KEY,auth.currentUser!!.email)
+                    Toast.makeText(baseContext, "Te haz registrado exitosamente!",
+                        Toast.LENGTH_SHORT).show()
                     startActivity(intent)
                     finish()
                 } else {
