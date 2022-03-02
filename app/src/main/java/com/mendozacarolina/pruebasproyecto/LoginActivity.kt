@@ -57,7 +57,7 @@ class LoginActivity : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     Log.d(EXTRA_LOGIN, "Exito")
-                    var intent = Intent(this,MainActivity::class.java)
+                    val intent = Intent(this,MainActivity::class.java)
                     intent.putExtra(LOGIN_KEY,auth.currentUser!!.email)
                     startActivity(intent)
                     finish()

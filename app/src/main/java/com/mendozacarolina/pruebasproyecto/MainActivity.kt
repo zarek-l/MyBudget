@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        buttonEliminar = findViewById(R.id.buttonLogin)
+        buttonEliminar = findViewById(R.id.buttonEliminar)
 
         buttonEliminar.setOnClickListener{
             var intent = Intent(this,EliminarServicioActivity::class.java)
