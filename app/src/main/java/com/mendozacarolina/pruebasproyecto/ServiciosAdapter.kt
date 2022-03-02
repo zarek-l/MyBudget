@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class ServiciosAdapter(private val context: Activity, val arregloServicios:Array<Servicio>) : RecyclerView.Adapter<ServiciosAdapter.ViewHolder>(){
+class ServiciosAdapter(private val context: Activity, val arregloServicios: ArrayList<Servicio>) : RecyclerView.Adapter<ServiciosAdapter.ViewHolder>(){
 
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view){
         val textViewServicio: TextView = view.findViewById(R.id.textViewServicio)
