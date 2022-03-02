@@ -1,7 +1,7 @@
 package com.mendozacarolina.pruebasproyecto
 
 import android.content.Intent
-import android.content.SharedPreferences
+//import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -16,7 +16,6 @@ import com.google.firebase.ktx.Firebase
 class LoginActivity : AppCompatActivity() {
 
     //variables para LogIn
-    lateinit var sharedPreferences: SharedPreferences
     lateinit var editTextEmail:EditText
     lateinit var editTextPassword: EditText
     lateinit var textViewRegistrar : TextView
@@ -45,13 +44,11 @@ class LoginActivity : AppCompatActivity() {
             val password = editTextPassword.text.toString()
             if (!ValidarDatosRequeridos())
                 return@setOnClickListener
-            // EscribirDatosEnArchivoPreferencias()
             AutenticarUsuario(email, password)
         }
 
         textViewRegistrar.setOnClickListener{
-            //Toast.makeText(this@MainActivity, "You clicked on TextView 'Click Me'.", Toast.LENGTH_SHORT).show()
-           // var intent = Intent(this,CrearActivity::class.java)
+           var intent = Intent(this,SignActivity::class.java)
             startActivity(intent)
         }
     }
