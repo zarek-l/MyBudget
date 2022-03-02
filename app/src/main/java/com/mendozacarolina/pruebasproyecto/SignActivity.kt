@@ -1,19 +1,16 @@
 package com.mendozacarolina.pruebasproyecto
 
-import android.content.ContentValues.TAG
-import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
 class SignActivity : AppCompatActivity(){
+
     lateinit var editTextUsuario: EditText
     lateinit var editTextName: EditText
     lateinit var editTextEmailCreate: EditText
@@ -38,63 +35,6 @@ class SignActivity : AppCompatActivity(){
         // Initialize Firebase Auth
         auth = Firebase.auth
 
-        buttonSign.setOnClickListener {
-            val email = editTextEmailCreate.text.toString()
-            val clave = editTextPassCreate.text.toString()
-            //Validaciones de datos requeridos y formatos
-            if(!ValidarDatosRequeridos())
-                return@setOnClickListener
-            CrearNuevoUsuario(email,clave)
-        }
-
-        textViewIniciar.setOnClickListener {
-            var intent = Intent(this,LoginActivity::class.java)
-            startActivity(intent)
-            finish()
-        }
     }
 
-    fun CrearNuevoUsuario(email:String, password:String){
-            auth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) {
-                        val user = auth.currentUser
-                        Toast.makeText(baseContext, "Nuevo usuario agregado",  Toast.LENGTH_SHORT).show()
-                        var intent2 = Intent(this,LoginActivity::class.java)
-                        intent2.putExtra(LOGIN_KEY,auth.currentUser!!.email)
-                        startActivity(intent2)
-                        finish()
-                    } else {
-                        Toast.makeText(baseContext, task.exception!!.message,
-                            Toast.LENGTH_SHORT).show()
-                    }
-                }
-        }
-
-    private fun ValidarDatosRequeridos():Boolean{
-        val email = editTextEmailCreate.text.toString()
-        val clave = editTextPassCreate.text.toString()
-        val clave2 = editTextPassCreate2.text.toString()
-        if (email.isEmpty()) {
-            editTextEmailCreate.setError("El email es obligatorio")
-            editTextEmailCreate.requestFocus()
-            return false
-        }
-        if (clave.isEmpty()) {
-            editTextPassCreate.setError("La clave es obligatoria")
-            editTextPassCreate.requestFocus()
-            return false
-        }
-        if (clave.length < 7) {
-            editTextPassCreate.setError("La clave debe tener al menos 7 caracteres")
-            editTextPassCreate.requestFocus()
-            return false
-        }
-        if (!clave.equals(clave2)) {
-            editTextPassCreate2.setError("La clave no es igual en el campo de verificación")
-            editTextPassCreate2.requestFocus()
-            return false
-        }
-        return true
-    }
 }
