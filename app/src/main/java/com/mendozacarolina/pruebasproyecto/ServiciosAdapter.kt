@@ -29,7 +29,7 @@ class ServiciosAdapter(private val context: Activity, val arregloServicios: Arra
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder) {
             Glide.with(context).load(arregloServicios[position].imagenServicio).into(imageViewServicios!!)
-            textViewServicio.text = arregloServicios[position].toString()
+            textViewServicio.text = "${arregloServicios[position].nombreServicio}"
         }
     }
 }

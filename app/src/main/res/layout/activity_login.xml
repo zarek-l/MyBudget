@@ -34,7 +34,7 @@
         android:layout_height="44dp"
         android:layout_marginTop="30dp"
         android:ems="10"
-        android:hint="Usuario"
+        android:hint="Correo electrónico"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -81,12 +81,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
-        android:text="  REGÍSTRATE"
         android:onClick="click"
+        android:text="  REGÍSTRATE"
         android:textColor="#E91E63"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.721"
+        app:layout_constraintHorizontal_bias="0.772"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
 

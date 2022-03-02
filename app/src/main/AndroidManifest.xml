@@ -34,6 +34,11 @@
             android:exported="true">
         </activity>
 
+        <activity
+            android:name=".EliminarServicioActivity"
+            android:exported="true">
+        </activity>
+
     </application>
 
 </manifest>
