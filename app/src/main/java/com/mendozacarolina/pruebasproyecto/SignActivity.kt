@@ -62,7 +62,8 @@ class SignActivity : AppCompatActivity(){
             hashMapOf("usuario" to editTextUsuario.text.toString(),
                 "nombre" to editTextNombre.text.toString(),
                 "correo" to editTextEmailUsuario.text.toString(),
-                "contraseña" to editTextContrasena.text.toString())
+                "contraseña" to editTextContrasena.text.toString(),
+                "tipoPlan" to "Plan Gratuito")
         )
     }
 
