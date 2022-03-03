@@ -39,4 +39,27 @@
     <string name="agregar_servicio">Agregar servicio</string>
     <string name="a_adir">Añadir</string>
     <string name="mensaje_exito_servicio_agregado">Se añadió el servicio exitosamente</string>
+    <string name="conoce_tu_balance">Conoce tu balance</string>
+    <string name="calendario">Calendario</string>
+    <string name="informaci_n_del_usuario">Información del usuario</string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="correo_electr_nico">Correo electrónico</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="iniciar_sesi_n">Iniciar Sesión</string>
+    <string name="no_tienes_cuenta">¿No tienes cuenta?</string>
+    <string name="reg_strate">REGÍSTRATE</string>
+    <string name="tus_servicios">Tus Servicios</string>
+    <string name="registro_de_gastos">Registro de gastos</string>
+    <string name="balance_y_calendario">Balance y calendario</string>
+    <string name="agregar_servicio">Agregar servicio</string>
+    <string name="eliminar_servicio">Eliminar servicio</string>
+    <string name="opciones_de_gesti_n">Opciones de gestión</string>
+    <string name="crear_usuario">Crear Usuario</string>
+    <string name="usuario_sign">Usuario</string>
+    <string name="nombre_completo">Nombre Completo</string>
+    <string name="correo_electr_nico_txt">Correo Electrónico</string>
+    <string name="contrase_a_string">Contraseña</string>
+    <string name="registrar_txt">Registrar</string>
+    <string name="ya_tienes_cuenta">¿Ya tienes cuenta?</string>
+    <string name="inicia_sesi_n">INICIA SESIÖN</string>
 </resources>
