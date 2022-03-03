@@ -6,9 +6,6 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -26,8 +23,8 @@ class EliminarServicioActivity : AppCompatActivity(){
         setContentView(R.layout.activity_eliminar_servicio)
 
         //inicializacion de variables
-        //userId = intent.extras!!.getString("LOGIN_KEY")!!
         userId= Firebase.auth.currentUser?.email.toString()
+
         consultarServiciosUsuario(userId)
     }
 
@@ -44,10 +41,10 @@ class EliminarServicioActivity : AppCompatActivity(){
                 }
 
                 //Poblar en RecyclerView información usando mi adaptador
-                val recyclerViewRanking: RecyclerView = findViewById(R.id.recyclerViewServicios);
-                recyclerViewRanking.layoutManager = LinearLayoutManager(this);
-                recyclerViewRanking.adapter = ServiciosAdapter(this, servicios);
-                recyclerViewRanking.setHasFixedSize(true);
+                val recyclerViewServicios: RecyclerView = findViewById(R.id.recyclerViewServicios);
+                recyclerViewServicios.layoutManager = LinearLayoutManager(this);
+                recyclerViewServicios.adapter = ServiciosAdapter(this, servicios);
+                recyclerViewServicios.setHasFixedSize(true);
             }
 
             .addOnFailureListener { exception ->
