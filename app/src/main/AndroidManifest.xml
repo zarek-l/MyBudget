@@ -54,6 +54,16 @@
             android:exported="true">
         </activity>
 
+        <activity
+            android:name=".AgregarServicioActivity"
+            android:exported="true">
+        </activity>
+
+        <activity
+            android:name=".BalanceActivity"
+            android:exported="true">
+        </activity>
+
     </application>
 
 </manifest>

@@ -31,7 +31,9 @@ class MainActivity : AppCompatActivity() {
         //inicializacion de variables
         setContentView(R.layout.activity_main)
         buttonEliminar = findViewById(R.id.buttonEliminar)
+        buttonAgregar = findViewById(R.id.buttonAgregar)
         buttonGastos = findViewById(R.id.buttonGastos)
+        buttonCalendario = findViewById(R.id.buttonCalendario)
         userId= Firebase.auth.currentUser?.email.toString()
 
 
@@ -42,6 +44,16 @@ class MainActivity : AppCompatActivity() {
 
         buttonGastos.setOnClickListener{
             var intent = Intent(this,GastosActivity::class.java)
+            startActivity(intent)
+        }
+
+        buttonCalendario.setOnClickListener{
+            var intent = Intent(this,BalanceActivity::class.java)
+            startActivity(intent)
+        }
+
+        buttonAgregar.setOnClickListener{
+            var intent = Intent(this,AgregarServicioActivity::class.java)
             startActivity(intent)
         }
 
