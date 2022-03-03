@@ -70,12 +70,15 @@ class GastosAnualesActivity : AppCompatActivity(){
 
         return when (item.itemId) {
             R.id.action_cuenta -> {
-                Toast.makeText(this,"cuenta", Toast.LENGTH_LONG).show()
+                var intent = Intent(this,ConfiguracionActivity::class.java)
+                startActivity(intent)
                 true
             }
             R.id.action_logOut -> {
                 Toast.makeText(this, R.string.mensajeSalida, Toast.LENGTH_LONG).show()
                 finish()
+                var intent = Intent(this,LoginActivity::class.java)
+                startActivity(intent)
                 true
             }
             else -> super.onOptionsItemSelected(item)
