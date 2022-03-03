@@ -44,6 +44,11 @@
             android:exported="true">
         </activity>
 
+        <activity
+            android:name=".GastosAnualesActivity"
+            android:exported="true">
+        </activity>
+
     </application>
 
 </manifest>
