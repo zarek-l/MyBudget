@@ -23,14 +23,18 @@ class GastosActivity : AppCompatActivity(){
     lateinit var textViewAño : TextView
     lateinit var textViewMontoMes : TextView
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro_mensual)
 
+        //inicializacion de variables
         textViewAño = findViewById(R.id.textViewAño)
         textViewMontoMes = findViewById(R.id.textViewMontoMes)
         userId= Firebase.auth.currentUser?.email.toString()
         consultarGastosServicios(userId)
+
+
         textViewAño.setOnClickListener{
             var intent = Intent(this,GastosAnualesActivity::class.java)
             startActivity(intent)

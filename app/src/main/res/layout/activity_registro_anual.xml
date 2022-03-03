@@ -80,7 +80,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/imageFlechaIzq"
         android:layout_width="17dp"
         android:layout_height="40dp"
         android:layout_marginStart="150dp"
@@ -93,7 +93,7 @@
         app:srcCompat="@drawable/flecha_izquierda" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/imageFlechaDer"
         android:layout_width="17dp"
         android:layout_height="40dp"
         android:layout_marginStart="1dp"

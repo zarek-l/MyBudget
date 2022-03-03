@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +22,9 @@ class GastosAnualesActivity : AppCompatActivity(){
     lateinit var userId: String
     lateinit var textViewMes : TextView
     lateinit var textViewMontoAnual : TextView
+    lateinit var textViewAñoActual : TextView
+    lateinit var  imageFlechaIzq: ImageView
+    lateinit var  imageFlechaDer:  ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,6 +33,9 @@ class GastosAnualesActivity : AppCompatActivity(){
         //inicializacion de variables
         textViewMes = findViewById(R.id.textViewMes)
         textViewMontoAnual = findViewById(R.id.textViewMontoAnual)
+        textViewAñoActual = findViewById(R.id.textViewAñoActual)
+        imageFlechaIzq = findViewById(R.id.imageFlechaIzq)
+        imageFlechaDer = findViewById(R.id.imageFlechaDer)
         userId= Firebase.auth.currentUser?.email.toString()
 
 
@@ -40,6 +47,14 @@ class GastosAnualesActivity : AppCompatActivity(){
         }
 
         sumaAnual(userId)
+
+        imageFlechaIzq.setOnClickListener{
+            textViewAñoActual.setText("2021")
+        }
+
+        imageFlechaDer.setOnClickListener{
+            textViewAñoActual.setText("2023")
+        }
     }
 
     fun consultarGastosServicios(userId:String) {
