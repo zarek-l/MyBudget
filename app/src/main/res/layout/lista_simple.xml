@@ -20,6 +20,7 @@
         android:textSize="20sp"
         android:translationX="20dp"
         android:translationY="30dp" />
+
 </LinearLayout>
 
 
