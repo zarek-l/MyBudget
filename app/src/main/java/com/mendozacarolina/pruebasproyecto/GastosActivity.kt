@@ -1,5 +1,6 @@
 package com.mendozacarolina.pruebasproyecto
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -64,20 +65,19 @@ class GastosActivity : AppCompatActivity(){
             }
     }
 
+    @SuppressLint("SetTextI18n")
     fun suma(userId: String)  {
-        var sumaT : Int = 0
         val db = Firebase.firestore
         db.collection("users/$userId/servicios")
             .get()
             .addOnSuccessListener { result ->
                 val objs = result.toObjects(Servicio::class.java)
-                sumaT = 0
                 var sumaAux = 0
                 for (obj in objs) {
                     sumaAux += obj.montoSuscripcion
 
                 }
-                textViewMontoMes.setText(sumaAux.toString())
+                textViewMontoMes.setText(sumaAux.toString()+" $")
             }
     }
 

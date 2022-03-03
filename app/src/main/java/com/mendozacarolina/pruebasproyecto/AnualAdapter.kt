@@ -36,7 +36,7 @@ class AnualAdapter(private val context: Activity, val arregloServicios: ArrayLis
         with(holder) {
             Glide.with(context).load(arregloServicios[position].imagenServicio).into(imageGAnuales!!)
             holder.textGAnuales.text = arregloServicios[position].nombreServicio
-            holder.textMontoGAnuales.text = arregloServicios[position].montoSuscripcion.toString()+" $"
+            holder.textMontoGAnuales.text = (arregloServicios[position].montoSuscripcion*12).toString()+" $"
         }
     }
 

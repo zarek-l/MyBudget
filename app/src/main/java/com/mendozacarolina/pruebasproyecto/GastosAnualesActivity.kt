@@ -1,5 +1,6 @@
 package com.mendozacarolina.pruebasproyecto
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -19,19 +20,26 @@ class GastosAnualesActivity : AppCompatActivity(){
 
     lateinit var userId: String
     lateinit var textViewMes : TextView
+    lateinit var textViewMontoAnual : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registro_anual)
 
+        //inicializacion de variables
         textViewMes = findViewById(R.id.textViewMes)
+        textViewMontoAnual = findViewById(R.id.textViewMontoAnual)
         userId= Firebase.auth.currentUser?.email.toString()
+
+
         consultarGastosServicios(userId)
 
         textViewMes.setOnClickListener{
             var intent = Intent(this,GastosActivity::class.java)
             startActivity(intent)
         }
+
+        sumaAnual(userId)
     }
 
     fun consultarGastosServicios(userId:String) {
@@ -60,6 +68,20 @@ class GastosAnualesActivity : AppCompatActivity(){
             }
     }
 
+    @SuppressLint("SetTextI18n")
+    fun sumaAnual(userId: String)  {
+        val db = Firebase.firestore
+        db.collection("users/$userId/servicios")
+            .get()
+            .addOnSuccessListener { result ->
+                val objs = result.toObjects(Servicio::class.java)
+                var sumaAux = 0
+                for (obj in objs) {
+                    sumaAux += obj.montoSuscripcion * 12
+                }
+                textViewMontoAnual.setText(sumaAux.toString()+" $")
+            }
+    }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
