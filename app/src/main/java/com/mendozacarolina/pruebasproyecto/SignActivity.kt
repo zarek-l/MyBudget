@@ -30,13 +30,13 @@ class SignActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign)
-        buttonRegistrar = findViewById(R.id.buttonSign)
-        editTextUsuario = findViewById(R.id.editTextUsuario)
-        editTextNombre = findViewById(R.id.editTextName)
+        buttonRegistrar = findViewById(R.id.buttonAgregarServicio)
+        editTextUsuario = findViewById(R.id.editNombreServicio)
+        editTextNombre = findViewById(R.id.editFechaPago)
         editTextEmailUsuario = findViewById(R.id.editTextEmailCreate)
         editTextContrasena = findViewById(R.id.editTextPassCreate)
         textViewIniciaSesion = findViewById(R.id.textViewIniciar)
-        buttonRegistrar = findViewById(R.id.buttonSign)
+        buttonRegistrar = findViewById(R.id.buttonAgregarServicio)
         auth = FirebaseAuth.getInstance();
         auth = Firebase.auth
 

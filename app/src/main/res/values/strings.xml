@@ -33,4 +33,10 @@
     <string name="tipoCuentaTxt">Tipo de cuenta</string>
     <string name="tipoCuenta">Plan gratuito</string>
     <string name="membresia">Obtener membresía</string>
+    <string name="fecha_de_pago">Fecha de pago</string>
+    <string name="costo_de_la_suscripci_n">Costo de la suscripción</string>
+    <string name="nombre_del_servicio">Nombre del servicio</string>
+    <string name="agregar_servicio">Agregar servicio</string>
+    <string name="a_adir">Añadir</string>
+    <string name="mensaje_exito_servicio_agregado">Se añadió el servicio exitosamente</string>
 </resources>
