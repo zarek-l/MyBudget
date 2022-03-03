@@ -50,7 +50,7 @@ class GastosActivity : AppCompatActivity(){
                 //Poblar en RecyclerView información usando mi adaptador
                 val recyclerViewRanking: RecyclerView = findViewById(R.id.recyclerViewGastos);
                 recyclerViewRanking.layoutManager = LinearLayoutManager(this);
-                recyclerViewRanking.adapter = GastosAdapter(this, servicios, userId);
+                recyclerViewRanking.adapter = GastosAdapter(this, servicios);
                 recyclerViewRanking.setHasFixedSize(true);
             }
 

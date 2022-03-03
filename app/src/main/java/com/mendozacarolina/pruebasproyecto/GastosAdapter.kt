@@ -13,7 +13,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 
-class GastosAdapter(private val context: Activity, val arregloServicios: ArrayList<Servicio>, userId:String) : RecyclerView.Adapter<GastosAdapter.ViewHolder>(){
+class GastosAdapter(private val context: Activity, val arregloServicios: ArrayList<Servicio>) : RecyclerView.Adapter<GastosAdapter.ViewHolder>(){
 
 
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view){

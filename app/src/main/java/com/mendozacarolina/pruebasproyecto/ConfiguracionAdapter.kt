@@ -1,5 +1,6 @@
 package com.mendozacarolina.pruebasproyecto
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
@@ -12,9 +13,10 @@ import com.bumptech.glide.Glide
 
 class ConfiguracionAdapter(private val context: Activity, val arregloUsuarios: ArrayList<Usuario>) : RecyclerView.Adapter<ConfiguracionAdapter.ViewHolder>(){
 
+    lateinit var arreglo : String
+
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view){
         val textViewCampo: TextView = view.findViewById(R.id.textViewCampo)
-        val textViewDato: TextView = view.findViewById(R.id.textViewDato)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -27,11 +29,17 @@ class ConfiguracionAdapter(private val context: Activity, val arregloUsuarios: A
         return arregloUsuarios.size
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder) {
-            //holder.textViewCampo.text = arregloUsuarios[position].nombreServicio
-            //holder.textViewDato.text = arregloUsuarios[position].fechaSuscripcion
+
+            arreglo = arregloUsuarios[position].toString()
+            arreglo = arreglo.replace(",", "\n\n");
+            arreglo = arreglo.replace("Usuario(", " ");
+            arreglo = arreglo.replace(")", "");
+            arreglo = arreglo.replace("=", ": ");
+            arreglo = arreglo.replace("tipoPlan", "tipo Plan");
+            holder.textViewCampo.text = arreglo
         }
     }
-
 }

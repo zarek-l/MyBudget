@@ -31,8 +31,22 @@ class ConfiguracionActivity : AppCompatActivity(){
         val docRef = db.collection("users").document("$userId")
         docRef.get()
             .addOnSuccessListener { document ->
-                if (document != null) {
-                    Log.d(TAG, "DocumentSnapshot data: ${document.data}")
+                //Traer datos del documento
+                if (document.exists()) {
+
+                    var usuarioData = ArrayList<Usuario>()
+
+                        val datos = document.toObject(Usuario::class.java)
+                        if (datos != null) {
+                            usuarioData.add(datos)
+                        }
+
+                    //Poblar en RecyclerView información usando mi adaptador
+                    val recyclerViewConf: RecyclerView = findViewById(R.id.recyclerViewConf);
+                    recyclerViewConf.layoutManager = LinearLayoutManager(this);
+                    recyclerViewConf.adapter = ConfiguracionAdapter(this, usuarioData);
+                    recyclerViewConf.setHasFixedSize(true);
+
                 } else {
                     Log.d(TAG, "No such document")
                 }
