@@ -22,7 +22,8 @@ class ConfiguracionActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_conf_cuenta)
-        //consultarDatosUsuario(userId)
+        userId= "carolina.mendoza@epn.edu.ec"
+        consultarDatosUsuario(userId)
     }
 
     fun consultarDatosUsuario(userId:String) {
