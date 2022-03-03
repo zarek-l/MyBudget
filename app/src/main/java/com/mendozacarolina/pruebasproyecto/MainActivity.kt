@@ -20,7 +20,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var buttonGastos: Button
     lateinit var buttonEliminar: Button
     lateinit var buttonCalendario: Button
-    lateinit var gridViewServicios : GridView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,5 +30,11 @@ class MainActivity : AppCompatActivity() {
             var intent = Intent(this,EliminarServicioActivity::class.java)
             startActivity(intent)
         }
+
+        buttonGastos.setOnClickListener{
+            var intent = Intent(this,GastosActivity::class.java)
+            startActivity(intent)
+        }
+
     }
 }

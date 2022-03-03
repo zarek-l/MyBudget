@@ -39,6 +39,11 @@
             android:exported="true">
         </activity>
 
+        <activity
+            android:name=".GastosActivity"
+            android:exported="true">
+        </activity>
+
     </application>
 
 </manifest>
