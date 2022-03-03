@@ -11,6 +11,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -32,7 +33,7 @@ class ServiciosAdapter(private val context: Activity, val arregloServicios: Arra
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        userId= "carolina.mendoza@epn.edu.ec"
+        userId= Firebase.auth.currentUser?.email.toString()
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.lista_simple, parent, false)
         return ViewHolder(view).setOnItemClickListener { position, type ->
@@ -51,7 +52,7 @@ class ServiciosAdapter(private val context: Activity, val arregloServicios: Arra
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder) {
-            Glide.with(context).load(arregloServicios[position].imagenServicio).into(imageViewServicios!!)
+            Glide.with(context).load(arregloServicios[position].imagenServicio).into(imageViewServicios)
             holder.textViewServicio.text = arregloServicios[position].nombreServicio
         }
     }

@@ -11,6 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -24,7 +25,7 @@ class GastosAnualesActivity : AppCompatActivity(){
         setContentView(R.layout.activity_registro_anual)
 
         textViewMes = findViewById(R.id.textViewMes)
-        userId= "carolina.mendoza@epn.edu.ec"
+        userId= Firebase.auth.currentUser?.email.toString()
         consultarGastosServicios(userId)
 
         textViewMes.setOnClickListener{

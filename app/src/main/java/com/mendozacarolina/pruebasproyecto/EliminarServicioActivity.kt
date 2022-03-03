@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
@@ -26,7 +27,7 @@ class EliminarServicioActivity : AppCompatActivity(){
 
         //inicializacion de variables
         //userId = intent.extras!!.getString("LOGIN_KEY")!!
-        userId= "carolina.mendoza@epn.edu.ec"
+        userId= Firebase.auth.currentUser?.email.toString()
         consultarServiciosUsuario(userId)
     }
 

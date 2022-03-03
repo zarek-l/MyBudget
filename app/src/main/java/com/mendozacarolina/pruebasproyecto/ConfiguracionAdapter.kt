@@ -12,7 +12,6 @@ import com.bumptech.glide.Glide
 
 class ConfiguracionAdapter(private val context: Activity, val arregloUsuarios: ArrayList<Usuario>) : RecyclerView.Adapter<ConfiguracionAdapter.ViewHolder>(){
 
-
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view){
         val textViewCampo: TextView = view.findViewById(R.id.textViewCampo)
         val textViewDato: TextView = view.findViewById(R.id.textViewDato)

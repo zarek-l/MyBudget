@@ -1,5 +1,6 @@
 package com.mendozacarolina.pruebasproyecto
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +9,11 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 
-class GastosAdapter(private val context: Activity, val arregloServicios: ArrayList<Servicio>) : RecyclerView.Adapter<GastosAdapter.ViewHolder>(){
+class GastosAdapter(private val context: Activity, val arregloServicios: ArrayList<Servicio>, userId:String) : RecyclerView.Adapter<GastosAdapter.ViewHolder>(){
 
 
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view){
@@ -31,6 +34,7 @@ class GastosAdapter(private val context: Activity, val arregloServicios: ArrayLi
         return arregloServicios.size
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder) {
             Glide.with(context).load(arregloServicios[position].imagenServicio).into(imageGastosServicio!!)
@@ -39,5 +43,4 @@ class GastosAdapter(private val context: Activity, val arregloServicios: ArrayLi
             holder.textMontoGasto.text = arregloServicios[position].montoSuscripcion.toString()+" $"
         }
     }
-
 }
