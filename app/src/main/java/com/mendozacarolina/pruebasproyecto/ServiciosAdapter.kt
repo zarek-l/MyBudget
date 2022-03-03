@@ -27,8 +27,8 @@ class ServiciosAdapter(private val context: Activity, val arregloServicios: Arra
     }
 
     class ViewHolder(val view: View) : RecyclerView.ViewHolder(view){
-        val textViewServicio: TextView = view.findViewById(R.id.textViewServicio)
-        val imageViewServicios: ImageView = view.findViewById(R.id.imageViewServicios)
+        val textViewServicio: TextView = view.findViewById(R.id.textServicioGasto)
+        val imageViewServicios: ImageView = view.findViewById(R.id.imageServicioGasto)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

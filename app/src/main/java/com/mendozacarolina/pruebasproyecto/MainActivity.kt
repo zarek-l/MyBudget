@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         buttonEliminar = findViewById(R.id.buttonEliminar)
+        buttonGastos = findViewById(R.id.buttonGastos)
 
         buttonEliminar.setOnClickListener{
             var intent = Intent(this,EliminarServicioActivity::class.java)
